@@ -23,14 +23,13 @@ export default function Home() {
     return `${imgUrl}?${params.toString()}`;
   };
   return (
-    <main className="flex flex-col min-h-screen items-center justify-center p-24 bg-gray-900 text-white">
-      <h1 className="text-4xl mb-6">Sirv + Next Image</h1>
-      <div className="flex w-full justify-center items-start mb-8">
-        <div className="w-2/5 flex flex-col">
-          <form className="bg-gray-900 p-4 rounded-md mb-4">
-            <label className="block text-white text-sm font-bold mb-2" htmlFor="imgUrl">
-              Image Path
-            </label>
+    <main className="flex flex-col min-h-screen items-center justify-center px-4 py-12 bg-gray-900 text-white">
+      <h1 className="text-3xl sm:text-4xl mb-6 text-center">Sirv + Next Image</h1>
+      <div className="flex flex-col sm:flex-row w-full justify-center items-start mb-8">
+        <div className="flex flex-col w-full sm:w-2/5">
+          <form className="bg-gray-900 p-4 rounded-md mb-4">            <label className="block text-white text-sm font-bold mb-2" htmlFor="imgUrl">
+            Image Path
+          </label>
             <select
               id="imgUrl"
               value={imgUrl}
@@ -79,7 +78,7 @@ export default function Home() {
           </form>
 
         </div>
-        <div className="z-10 w-3/5 flex flex-col items-center font-mono text-sm">
+        <div className="z-10 flex flex-col items-center font-mono text-sm mt-6 sm:mt-0 sm:w-3/5">
           <Image
             src={buildImageSrc()}
             alt="Image"

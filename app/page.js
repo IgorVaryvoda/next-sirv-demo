@@ -47,17 +47,26 @@ export default function Home() {
             <label className="block text-white text-sm font-bold mb-2" htmlFor="width">
               Width
             </label>
-            <input id="width" type="number" value={width} onChange={(e) => setWidth(e.target.value ? Number(e.target.value) : 500)} placeholder="Width" className="bg-gray-800 text-white p-2 rounded-md m-2 w-full" />
+            <input id="width" type="number" value={width} min="1" max="1000" onChange={(e) => {
+              const newValue = Number(e.target.value);
+              setWidth(newValue >= 1 && newValue <= 1000 ? newValue : width);
+            }} placeholder="Width" className="bg-gray-800 text-white p-2 rounded-md m-2 w-full" />
 
             <label className="block text-white text-sm font-bold mb-2" htmlFor="height">
               Height
             </label>
-            <input id="height" type="number" value={height} onChange={(e) => setHeight(e.target.value ? Number(e.target.value) : 200)} placeholder="Height" className="bg-gray-800 text-white p-2 rounded-md m-2 w-full" />
+            <input id="height" type="number" value={height} min="1" max="1000" onChange={(e) => {
+              const newValue = Number(e.target.value);
+              setHeight(newValue >= 1 && newValue <= 1000 ? newValue : height);
+            }} placeholder="Height" className="bg-gray-800 text-white p-2 rounded-md m-2 w-full" />
 
             <label className="block text-white text-sm font-bold mb-2" htmlFor="quality">
               Quality
             </label>
-            <input id="quality" type="number" value={quality} onChange={(e) => setQuality(e.target.value ? Number(e.target.value) : 50)} placeholder="Quality" className="bg-gray-800 text-white p-2 rounded-md m-2 w-full" />
+            <input id="quality" type="number" value={quality} min="0" max="100" onChange={(e) => {
+              const newValue = Number(e.target.value);
+              setQuality(newValue >= 0 && newValue <= 100 ? newValue : quality);
+            }} placeholder="Quality" className="bg-gray-800 text-white p-2 rounded-md m-2 w-full" />
             <label className="block text-white text-sm font-bold mb-2" htmlFor="blur">
               Blur
             </label>

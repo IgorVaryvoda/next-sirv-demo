@@ -41,7 +41,6 @@ export default function Home() {
               <option value="/look.jpg">/look.jpg</option>
               <option value="/sky.jpg">/sky.jpg</option>
               <option value="/oman.jpg">/oman.jpg</option>
-              <option value="/trainer-pinks.jpg">/trainer-pinks.jpg</option>
             </select>
             <label className="block text-white text-sm font-bold mb-2" htmlFor="width">
               Width

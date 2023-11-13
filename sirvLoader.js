@@ -1,11 +1,11 @@
-export default function SirvLoader({ src, width, quality, blur, sharpen }) {
+export default function SirvLoader({ src, width, quality }) {
   const url = new URL(`https://demo.sirv.com${src}`);
   const params = url.searchParams;
 
-  params.set('format', params.get('format') || 'optimal');
-  params.set('w', width.toString());
-  params.set('q', quality.toString());
-
+  params.set('format', params.getAll('format').join(',') || 'optimal');
+  params.set('w', params.get('w') || width.toString());
+  params.set('q', (quality || 85).toString());
+  params.set('profile', params.get('profile') || "OpenGraph");
   return url.href;
 }
 

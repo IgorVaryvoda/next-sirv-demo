@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 export default function Home() {
   const [imgUrl, setImgUrl] = useState('/bag.jpg');
+  const [profile, setProfile] = useState('OpenGraph');
   const [width, setWidth] = useState(500);
   const [height, setHeight] = useState(300);
   const [quality, setQuality] = useState(85);
@@ -12,7 +13,10 @@ export default function Home() {
   const buildImageSrc = () => {
     const params = new URLSearchParams();
 
-    // Only append blur and sharpen if they have values
+    // Only append profile, blur and sharpen if they have values
+    if (profile) {
+      params.append('profile', profile);
+    }
     if (blur > 0) {
       params.append('blur', blur.toString());
     }
@@ -27,9 +31,10 @@ export default function Home() {
       <h1 className="text-3xl sm:text-4xl mb-6 text-center">Sirv + Next Image</h1>
       <div className="flex flex-col sm:flex-row w-full justify-center items-start mb-8">
         <div className="flex flex-col w-full sm:w-2/5">
-          <form className="bg-gray-900 p-4 rounded-md mb-4">            <label className="block text-white text-sm font-bold mb-2" htmlFor="imgUrl">
-            Image Path
-          </label>
+          <form className="bg-gray-900 p-4 rounded-md mb-4">
+            <label className="block text-white text-sm font-bold mb-2" htmlFor="imgUrl">
+              Image Path
+            </label>
             <select
               id="imgUrl"
               value={imgUrl}
@@ -41,6 +46,22 @@ export default function Home() {
               <option value="/look.jpg">/look.jpg</option>
               <option value="/sky.jpg">/sky.jpg</option>
               <option value="/oman.jpg">/oman.jpg</option>
+            </select>
+            <label className="block text-white text-sm font-bold mb-2" htmlFor="profile">
+              Profile
+            </label>
+            <select
+              id="profile"
+              value={profile}
+              onChange={(e) => setProfile(e.target.value)}
+              className="bg-gray-800 text-white p-2 rounded-md m-2 w-full"
+            >
+              <option value="OpenGraph">Sale</option>
+              <option value="Vintage filter 2">Vintage Frame</option>
+              <option value="Product background">Background Frame</option>
+              <option value="Tiled watermark">Tiled watermark</option>
+              <option value="crop">Crop</option>
+              <option value="hsl-silver">Greyscale</option>
             </select>
             <label className="block text-white text-sm font-bold mb-2" htmlFor="width">
               Width
@@ -86,6 +107,9 @@ export default function Home() {
             height={height}
             quality={quality}
             priority
+            profile={profile}
+            blur={blur}
+            sharpen={sharpen}
           />
         </div>
       </div>

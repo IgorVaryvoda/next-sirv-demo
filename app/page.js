@@ -113,6 +113,7 @@ export default function Home() {
           />
         </div>
       </div>
+      <p className="credits">Powered by <a className='text-slate-400' href="https://sirv.com">Sirv</a> and <a className='text-slate-400' href="https://nextjs.org/docs/pages/api-reference/components/image">Next Image</a>.</p>
     </main >
   );
 }

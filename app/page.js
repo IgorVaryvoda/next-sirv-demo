@@ -29,6 +29,7 @@ export default function Home() {
   return (
     <main className="flex flex-col min-h-screen items-center justify-center px-4 md:px-12 lg:px-20 py-12 bg-gray-900 text-white">
       <h1 className="text-3xl sm:text-4xl mb-6 text-center">Sirv + Next Image</h1>
+      <h2 className="text-lg sm:text-lg mb-6 text-center">Try some of the 100+ options available</h2>
       <div className="flex flex-col sm:flex-row w-full justify-center items-center mb-8">
         <div className="flex flex-col w-full sm:w-2/5">
           <form className="bg-gray-900 p-4 rounded-md mb-4">

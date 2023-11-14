@@ -142,7 +142,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <p className="credits mb-2">Check out all <a className='text-slate-400' href="https://sirv.com">Sirv transformation options</a> and an interactive <a className='text-slate-400' href="https://sirv.com/help/image-api-wizard/">Live demo</a>.</p>
+      <p className="credits mb-2">Check out all <a className='text-slate-400' href="https://sirv.com/help/articles/dynamic-imaging/">Sirv transformation options</a> and an interactive <a className='text-slate-400' href="https://sirv.com/help/image-api-wizard/">Live demo</a>.</p>
 
       <p className="credits">Powered by <a className='text-slate-400' href="https://sirv.com">Sirv</a> and <a className='text-slate-400' href="https://nextjs.org/docs/pages/api-reference/components/image">Next Image</a>.</p>
     </main >

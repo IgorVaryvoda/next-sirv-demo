@@ -5,7 +5,7 @@ export default function SirvLoader({ src, width, quality }) {
   params.set('format', params.getAll('format').join(',') || 'optimal');
   params.set('w', params.get('w') || width.toString());
   params.set('q', (quality || 85).toString());
-  params.set('profile', params.get('profile') || "OpenGraph");
+  // params.set('profile', params.get('profile') || "OpenGraph");
   return url.href;
 }
 
